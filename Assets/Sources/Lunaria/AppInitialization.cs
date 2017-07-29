@@ -16,6 +16,7 @@ namespace Lunaria
 
             _initialized = true;
             ServiceHolder.Instance.Hold<IMessageService>(new MessageService());
+            ServiceHolder.Instance.Hold<HeroService>(new HeroService());
         }
     }
 }
