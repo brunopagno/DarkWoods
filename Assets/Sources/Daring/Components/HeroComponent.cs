@@ -27,17 +27,16 @@ public class HeroComponent : MonoBehaviour {
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
             _destination = worldPosition;
             _direction = (_destination - transform.position).normalized;
-            _look = Quaternion.LookRotation(_direction, Vector3.back);
-            // float lookAngle = Vector2.Angle(Vector2.down, new Vector2(_direction.x, _direction.y));
-            // _look = Quaternion.identity;
-            // if (_direction.x >= 0)
-            // {
-            //     _look = Quaternion.AngleAxis(lookAngle, Vector3.forward);
-            // }
-            // else
-            // {
-            //     _look = Quaternion.AngleAxis(lookAngle, Vector3.back);
-            // }
+            float lookAngle = Vector2.Angle(Vector2.down, new Vector2(_direction.x, _direction.y));
+            _look = Quaternion.identity;
+            if (_direction.x >= 0)
+            {
+                _look = Quaternion.AngleAxis(lookAngle, Vector3.forward);
+            }
+            else
+            {
+                _look = Quaternion.AngleAxis(lookAngle, Vector3.back);
+            }
         }
     }
 
