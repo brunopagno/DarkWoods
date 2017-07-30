@@ -7,9 +7,6 @@ using UnityEngine;
 public class TentacleComponent : BaseGameEntity
 {
     private IMessageService _messageService;
-    private GameObject _heroReference;
-    private LightComponent _flashLightReference;
-
     public GameObject Exclamation;
 
     public float Range = 0.5f;
@@ -21,10 +18,8 @@ public class TentacleComponent : BaseGameEntity
 
     private void Awake()
     {
+        EntityType = EntityType.Tentacle;
         _messageService = ServiceHolder.Instance.Get<IMessageService>();
-
-        _heroReference = GameObject.FindGameObjectWithTag("Player");
-        _flashLightReference = GameObject.FindGameObjectWithTag("FlashLight").GetComponent<LightComponent>();
     }
 
     private void Update()
@@ -47,18 +42,15 @@ public class TentacleComponent : BaseGameEntity
             for (int i = 0; i < hits.Length; i++)
             {
                 Collider2D hit = hits[i];
-                if (hit != null)
+                GameObject collided = hit.gameObject;
+                if (collided.layer == 8 ||
+                    collided.layer == 11)
                 {
-                    GameObject collided = hit.gameObject;
-                    if (collided.layer == 8 ||
-                        collided.layer == 11)
-                    {
-                        collided.GetComponent<BaseGameEntity>().BeCaughtByTentacle();
-                        Exclamation.SetActive(true);
-                        _killingSomeone = true;
-                        _theKilled = collided;
-                        _direction = (_theKilled.transform.position - transform.position).normalized;
-                    }
+                    collided.GetComponent<BaseGameEntity>().BeCaughtByTentacle();
+                    Exclamation.SetActive(true);
+                    _killingSomeone = true;
+                    _theKilled = collided;
+                    _direction = (_theKilled.transform.position - transform.position).normalized;
                 }
             }
         }

@@ -24,20 +24,12 @@ public class BatBatComponent : BaseGameEntity
 
     private void Awake()
     {
+        EntityType = EntityType.BatBat;
         _messageService = ServiceHolder.Instance.Get<IMessageService>();
-        _messageService.AddHandler<HeroCollisionMessage>(OnHeroCollisionMessage);
         _messageService.AddHandler<EndGameMessage>(obj => _stop = true);
 
         _heroReference = GameObject.FindGameObjectWithTag("Player");
         _flashLightReference = GameObject.FindGameObjectWithTag("FlashLight").GetComponent<LightComponent>();
-    }
-
-    private void OnHeroCollisionMessage(HeroCollisionMessage obj)
-    {
-        if (obj.Collision.gameObject == gameObject)
-        {
-            _messageService.SendMessage(new ScareHeroMessage(gameObject));
-        }
     }
 
     private void Update()
@@ -105,15 +97,5 @@ public class BatBatComponent : BaseGameEntity
                 Gizmos.DrawLine(p + Vector2.up * 0.5f, p + Vector2.down * 0.5f);
             }
         }
-    }
-}
-
-public class ScareHeroMessage
-{
-    public GameObject GameObject;
-
-    public ScareHeroMessage(GameObject gameObject)
-    {
-        GameObject = gameObject;
     }
 }

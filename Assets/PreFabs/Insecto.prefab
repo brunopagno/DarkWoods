@@ -53,6 +53,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4453258498240044}
   - component: {fileID: 114975563660401888}
+  - component: {fileID: 61552250405086666}
+  - component: {fileID: 50319004618131984}
   m_Layer: 11
   m_Name: Insecto
   m_TagString: Untagged
@@ -93,7 +95,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1879401944928986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.71, y: -0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4006104439555852}
@@ -140,6 +142,51 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1241159138814474}
   m_Mesh: {fileID: 4300000, guid: ab6139b0d8c27974c968e424f158eddd, type: 3}
+--- !u!50 &50319004618131984
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1879401944928986}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &61552250405086666
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1879401944928986}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.44, y: 0.3}
+  m_EdgeRadius: 0
 --- !u!114 &114975563660401888
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -151,6 +198,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 767683328e9cf914f987c77d2655286f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Speed: 0.85
+  RotationSpeed: 20
   Exclamation: {fileID: 1613749256672670}
 --- !u!212 &212936408930224382
 SpriteRenderer:

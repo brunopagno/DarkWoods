@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class HeroComponent : BaseGameEntity
 {
-
     public enum HeroState
     {
         Normal,
@@ -18,6 +17,7 @@ public class HeroComponent : BaseGameEntity
     public float RotationSpeed = 20;
     public float ScariedSpeed = 1f;
     public float ScariedTime = 2f;
+    public float AuraDistanceForNoticeability = 1.4f;
 
     private Vector3 _nextDestination;
     private Vector3 _destination;
@@ -35,8 +35,8 @@ public class HeroComponent : BaseGameEntity
 
     private void Awake()
     {
+        EntityType = EntityType.Hero;
         _messageService = ServiceHolder.Instance.Get<IMessageService>();
-        _messageService.AddHandler<ScareHeroMessage>(OnScareHeromessage);
         _messageService.AddHandler<EndGameMessage>(obj => _stop = true);
         _currentSpeed = Speed;
         _state = HeroState.Normal;
@@ -51,6 +51,7 @@ public class HeroComponent : BaseGameEntity
 
         GetInput();
         MoveHero();
+        DetectAuraCollision();
     }
 
     private void GetInput()
@@ -109,14 +110,27 @@ public class HeroComponent : BaseGameEntity
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void DetectAuraCollision()
     {
-        _messageService.SendMessage(new HeroCollisionMessage(collision));
-    }
-
-    private void OnScareHeromessage(ScareHeroMessage obj)
-    {
-        SetState(HeroState.Scaried, obj.GameObject.transform.position);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, AuraDistanceForNoticeability);
+        for (int i = 0; i < hits.Length; i++)
+        {
+            Collider2D hit = hits[i];
+            GameObject collided = hit.gameObject;
+            if (collided.layer == 11) // if is creature
+            {
+                BaseGameEntity bge = collided.GetComponent<BaseGameEntity>();
+                switch(bge.EntityType)
+                {
+                    case EntityType.BatBat:
+                        SetState(HeroState.Scaried, collided.transform.position);
+                        break;
+                    case EntityType.Insecto:
+                        (bge as InsectoComponent).BlowUp();
+                        break;
+                }
+            }
+        }
     }
 
     private void SetState(HeroState state, Vector3 somePosition)
@@ -140,14 +154,10 @@ public class HeroComponent : BaseGameEntity
     {
         _stop = true;
     }
-}
 
-public class HeroCollisionMessage
-{
-    public Collision2D Collision;
-
-    public HeroCollisionMessage(Collision2D collision)
+    private void OnDrawGizmos()
     {
-        Collision = collision;
+        Gizmos.color = new Color(0, 0.8f, 1f, 0.5f);
+        Gizmos.DrawSphere(transform.position, AuraDistanceForNoticeability);
     }
 }
