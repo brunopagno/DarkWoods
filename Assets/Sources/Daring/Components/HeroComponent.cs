@@ -37,17 +37,18 @@ public class HeroComponent : BaseGameEntity
     private float _scariedTimer;
 
     private IMessageService _messageService;
+    private FlashLight _flashLight;
     
     private bool _stop;
 
     private void Awake()
     {
         EntityType = EntityType.Hero;
+        _flashLight = ServiceHolder.Instance.Get<HeroService>().Hero.FlashLight;
         _messageService = ServiceHolder.Instance.Get<IMessageService>();
         _messageService.AddHandler<EndGameMessage>(obj => _stop = true);
         _currentSpeed = Speed;
         _state = HeroState.Normal;
-        TheOneAnimator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -152,6 +153,7 @@ public class HeroComponent : BaseGameEntity
                         SetState(HeroState.Scared, collided.transform.position);
                         break;
                     case EntityType.Insecto:
+                        _flashLight.DrainSomeBattery();
                         (bge as InsectoComponent).BlowUp();
                         break;
                 }
