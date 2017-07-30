@@ -1,17 +1,70 @@
 fileFormatVersion: 2
-guid: d355c253c10575a408f54089ad602800
-timeCreated: 1501371310
+guid: e645897decd53d040bb4495a50e7ad0a
+timeCreated: 1501434280
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: default
-    400000: //RootNode
-    400002: default
-    2300000: default
-    3300000: default
-    4300000: default
+    100000: Ant_jnt
+    100002: Ant_jnt_grp
+    100004: Bug_Chest_jnt
+    100006: Bug_Head_end
+    100008: Bug_Hesd_jnt
+    100010: Bug_Knee_L_jnt
+    100012: Bug_Knee_R_jnt
+    100014: Bug_Leg_L_end
+    100016: Bug_Leg_R_end
+    100018: Bug_Root_jnt
+    100020: BugFemour_L_jnt
+    100022: BugFemour_R_jnt
+    100024: Chest_jnt
+    100026: Chest_jnt_grp
+    100028: Femour_L_jnt
+    100030: Femour_L_jnt_grp
+    100032: Femour_R_jnt
+    100034: Femour_R_jnt_grp
+    100036: Head_jnt
+    100038: Head_jnt_grp
+    100040: Insect_geo
+    100042: //RootNode
+    100044: Knee_L_jnt
+    100046: Knee_L_jnt_grp
+    100048: Knee_R_jnt
+    100050: Knee_R_jnt_grp
+    100052: Root_jnt
+    100054: Root_jnt_grp
+    400000: Ant_jnt
+    400002: Ant_jnt_grp
+    400004: Bug_Chest_jnt
+    400006: Bug_Head_end
+    400008: Bug_Hesd_jnt
+    400010: Bug_Knee_L_jnt
+    400012: Bug_Knee_R_jnt
+    400014: Bug_Leg_L_end
+    400016: Bug_Leg_R_end
+    400018: Bug_Root_jnt
+    400020: BugFemour_L_jnt
+    400022: BugFemour_R_jnt
+    400024: Chest_jnt
+    400026: Chest_jnt_grp
+    400028: Femour_L_jnt
+    400030: Femour_L_jnt_grp
+    400032: Femour_R_jnt
+    400034: Femour_R_jnt_grp
+    400036: Head_jnt
+    400038: Head_jnt_grp
+    400040: Insect_geo
+    400042: //RootNode
+    400044: Knee_L_jnt
+    400046: Knee_L_jnt_grp
+    400048: Knee_R_jnt
+    400050: Knee_R_jnt_grp
+    400052: Root_jnt
+    400054: Root_jnt_grp
+    4300000: Insect_geo
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Insect_geo
   materials:
     importMaterials: 1
     materialName: 0
@@ -39,7 +92,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.15
+    globalScale: 12
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -81,7 +134,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

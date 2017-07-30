@@ -1,0 +1,168 @@
+fileFormatVersion: 2
+guid: 1040507768089de44b6ed3912d785e14
+timeCreated: 1501434154
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Tentacle_01_jnt
+    100002: Tentacle_01_jnt 1
+    100004: Tentacle_01_jnt_grp
+    100006: Tentacle_02_jnt
+    100008: Tentacle_02_jnt 1
+    100010: Tentacle_02_jnt_grp
+    100012: Tentacle_03_jnt
+    100014: Tentacle_03_jnt 1
+    100016: Tentacle_03_jnt_grp
+    100018: Tentacle_04_jnt
+    100020: Tentacle_04_jnt 1
+    100022: Tentacle_04_jnt_grp
+    100024: Tentacle_05_jnt
+    100026: Tentacle_05_jnt 1
+    100028: Tentacle_05_jnt_grp
+    100030: Tentacle_06_jnt
+    100032: Tentacle_06_jnt 1
+    100034: Tentacle_06_jnt_grp
+    100036: Tentacle_07_jnt
+    100038: Tentacle_07_jnt 1
+    100040: Tentacle_07_jnt_grp
+    100042: Tentacle_08_jnt
+    100044: Tentacle_08_jnt 1
+    100046: Tentacle_08_jnt_grp
+    100048: Tentacle_09_jnt
+    100050: Tentacle_geo
+    100052: //RootNode
+    400000: Tentacle_01_jnt
+    400002: Tentacle_01_jnt 1
+    400004: Tentacle_01_jnt_grp
+    400006: Tentacle_02_jnt
+    400008: Tentacle_02_jnt 1
+    400010: Tentacle_02_jnt_grp
+    400012: Tentacle_03_jnt
+    400014: Tentacle_03_jnt 1
+    400016: Tentacle_03_jnt_grp
+    400018: Tentacle_04_jnt
+    400020: Tentacle_04_jnt 1
+    400022: Tentacle_04_jnt_grp
+    400024: Tentacle_05_jnt
+    400026: Tentacle_05_jnt 1
+    400028: Tentacle_05_jnt_grp
+    400030: Tentacle_06_jnt
+    400032: Tentacle_06_jnt 1
+    400034: Tentacle_06_jnt_grp
+    400036: Tentacle_07_jnt
+    400038: Tentacle_07_jnt 1
+    400040: Tentacle_07_jnt_grp
+    400042: Tentacle_08_jnt
+    400044: Tentacle_08_jnt 1
+    400046: Tentacle_08_jnt_grp
+    400048: Tentacle_09_jnt
+    400050: Tentacle_geo
+    400052: //RootNode
+    4300000: Tentacle_geo
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Tentacle_geo
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 12
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

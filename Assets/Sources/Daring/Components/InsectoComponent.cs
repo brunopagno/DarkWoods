@@ -14,6 +14,7 @@ public class InsectoComponent : BaseGameEntity
     public float Speed = 0.8f;
     public float RotationSpeed = 20f;
     public GameObject Exclamation;
+    public Animator TheOtherAnimator;
     
     private bool _stop;
 
@@ -55,10 +56,12 @@ public class InsectoComponent : BaseGameEntity
                 }
 
                 transform.rotation = Quaternion.Slerp(transform.rotation, look, Time.deltaTime * RotationSpeed);
+                TheOtherAnimator.SetBool("walking", true);
             }
             else
             {
                 Exclamation.SetActive(false);
+                TheOtherAnimator.SetBool("walking", false);
             }
         }
     }
@@ -78,5 +81,6 @@ public class InsectoComponent : BaseGameEntity
     {
         _stop = true;
         _animator.SetTrigger("blow");
+        GetComponent<Collider2D>().enabled = false;
     }
 }

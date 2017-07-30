@@ -1,0 +1,178 @@
+fileFormatVersion: 2
+guid: add6dcff0417e2c48b68e5ac4a0e9ecb
+timeCreated: 1501434154
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Bat_Chest_jnt
+    100004: Bat_geo
+    100006: Bat_Head_end
+    100008: Bat_Head_jnt
+    100010: Bat_Root_jnt
+    100012: Bat_Shoulder_L_jnt
+    100014: Bat_Shoulder_R_jnt
+    100016: Bat_Wing02_L_jnt
+    100018: Bat_Wing02_R_jnt
+    100020: Bat_Wing_L_end
+    100022: Bat_Wing_L_jnt
+    100024: Bat_Wing_R_end
+    100026: Bat_Wing_R_jnt
+    100028: Chest_ctrl
+    100030: Chest_ctrl_grp
+    100032: Head_ctrl
+    100034: Head_ctrl_grp
+    100036: Root_ctrl
+    100038: Root_ctrl_grp
+    100040: Shoulder_L_ctrl
+    100042: Shoulder_L_ctrl_grp
+    100044: Shoulder_R_ctrl
+    100046: Shoulder_R_ctrl_grp
+    100048: Wing02_L_ctrl
+    100050: Wing02_L_ctrl_grp
+    100052: Wing02_R_ctrl
+    100054: Wing02_R_ctrl_grp
+    100056: Wing_L_ctrl
+    100058: Wing_L_ctrl_grp
+    100060: Wing_R_ctrl
+    100062: Wing_R_ctrl_grp
+    400000: //RootNode
+    400002: Bat_Chest_jnt
+    400004: Bat_geo
+    400006: Bat_Head_end
+    400008: Bat_Head_jnt
+    400010: Bat_Root_jnt
+    400012: Bat_Shoulder_L_jnt
+    400014: Bat_Shoulder_R_jnt
+    400016: Bat_Wing02_L_jnt
+    400018: Bat_Wing02_R_jnt
+    400020: Bat_Wing_L_end
+    400022: Bat_Wing_L_jnt
+    400024: Bat_Wing_R_end
+    400026: Bat_Wing_R_jnt
+    400028: Chest_ctrl
+    400030: Chest_ctrl_grp
+    400032: Head_ctrl
+    400034: Head_ctrl_grp
+    400036: Root_ctrl
+    400038: Root_ctrl_grp
+    400040: Shoulder_L_ctrl
+    400042: Shoulder_L_ctrl_grp
+    400044: Shoulder_R_ctrl
+    400046: Shoulder_R_ctrl_grp
+    400048: Wing02_L_ctrl
+    400050: Wing02_L_ctrl_grp
+    400052: Wing02_R_ctrl
+    400054: Wing02_R_ctrl_grp
+    400056: Wing_L_ctrl
+    400058: Wing_L_ctrl_grp
+    400060: Wing_R_ctrl
+    400062: Wing_R_ctrl_grp
+    4300000: Bat_geo
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Bat_geo
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 12
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 12
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

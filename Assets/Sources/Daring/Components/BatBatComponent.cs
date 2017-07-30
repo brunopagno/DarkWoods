@@ -11,6 +11,8 @@ public class BatBatComponent : BaseGameEntity
     public float Speed = 1.35f;
     public Vector2[] Path;
     public GameObject Exclamation;
+    public GameObject Haha;
+    public float WaitLaughing = 2;
 
     private int _nextPosition;
     private bool _moveOn = true;
@@ -21,6 +23,8 @@ public class BatBatComponent : BaseGameEntity
     private LightComponent _flashLightReference;
     
     private bool _stop;
+    private float _waitTimer;
+    private bool _waitLaughing;
 
     private void Awake()
     {
@@ -30,6 +34,11 @@ public class BatBatComponent : BaseGameEntity
 
         _heroReference = GameObject.FindGameObjectWithTag("Player");
         _flashLightReference = GameObject.FindGameObjectWithTag("FlashLight").GetComponent<LightComponent>();
+
+        for (int i = 0; i < Path.Length; i++)
+        {
+            Path[i] += new Vector2(transform.position.x, transform.position.y);
+        }
     }
 
     private void Update()
@@ -38,6 +47,19 @@ public class BatBatComponent : BaseGameEntity
         {
             return;
         }
+
+        if (_waitLaughing)
+        {
+            Haha.SetActive(true);
+            _waitTimer += Time.deltaTime;
+            if (_waitTimer > WaitLaughing)
+            {
+                _waitLaughing = false;
+                _waitTimer = 0;
+            }
+            return;
+        }
+        Haha.SetActive(false);
 
         if (CanSeeHero())
         {
@@ -85,6 +107,11 @@ public class BatBatComponent : BaseGameEntity
         _stop = true;
     }
 
+    public void Laugh()
+    {
+        _waitLaughing = true;
+    }
+
     private void OnDrawGizmos()
     {
         if (Path != null && Path.Length > 0)
@@ -93,8 +120,10 @@ public class BatBatComponent : BaseGameEntity
             for (int i = 0; i < Path.Length; i++)
             {
                 Vector2 p = Path[i];
-                Gizmos.DrawLine(p + Vector2.left * 0.5f, p + Vector2.right * 0.5f);
-                Gizmos.DrawLine(p + Vector2.up * 0.5f, p + Vector2.down * 0.5f);
+                Gizmos.DrawLine(new Vector3(p.x, p.y) + Vector3.left * 0.5f + transform.position,
+                                new Vector3(p.x, p.y) + Vector3.right * 0.5f + transform.position);
+                Gizmos.DrawLine(new Vector3(p.x, p.y) + Vector3.up * 0.5f + transform.position,
+                                new Vector3(p.x, p.y) + Vector3.down * 0.5f + transform.position);
             }
         }
     }

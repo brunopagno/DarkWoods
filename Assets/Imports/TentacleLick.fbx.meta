@@ -1,17 +1,68 @@
 fileFormatVersion: 2
-guid: ab8fb80e9fc8ae64c90aabcfd93037ea
-timeCreated: 1501371309
+guid: b247f8446c0aa1f44a63dfce941421f8
+timeCreated: 1501438113
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
-    100000: default
-    100002: //RootNode
-    400000: default
-    400002: //RootNode
-    2300000: default
-    3300000: default
-    4300000: default
+    100000: Tentacle_01_jnt
+    100002: Tentacle_01_jnt 1
+    100004: Tentacle_01_jnt_grp
+    100006: Tentacle_02_jnt
+    100008: Tentacle_02_jnt 1
+    100010: Tentacle_02_jnt_grp
+    100012: Tentacle_03_jnt
+    100014: Tentacle_03_jnt 1
+    100016: Tentacle_03_jnt_grp
+    100018: Tentacle_04_jnt
+    100020: Tentacle_04_jnt 1
+    100022: Tentacle_04_jnt_grp
+    100024: Tentacle_05_jnt
+    100026: Tentacle_05_jnt 1
+    100028: Tentacle_05_jnt_grp
+    100030: Tentacle_06_jnt
+    100032: Tentacle_06_jnt 1
+    100034: Tentacle_06_jnt_grp
+    100036: Tentacle_07_jnt
+    100038: Tentacle_07_jnt 1
+    100040: Tentacle_07_jnt_grp
+    100042: Tentacle_08_jnt
+    100044: Tentacle_08_jnt 1
+    100046: Tentacle_08_jnt_grp
+    100048: Tentacle_09_jnt
+    100050: Tentacle_geo
+    100052: //RootNode
+    400000: Tentacle_01_jnt
+    400002: Tentacle_01_jnt 1
+    400004: Tentacle_01_jnt_grp
+    400006: Tentacle_02_jnt
+    400008: Tentacle_02_jnt 1
+    400010: Tentacle_02_jnt_grp
+    400012: Tentacle_03_jnt
+    400014: Tentacle_03_jnt 1
+    400016: Tentacle_03_jnt_grp
+    400018: Tentacle_04_jnt
+    400020: Tentacle_04_jnt 1
+    400022: Tentacle_04_jnt_grp
+    400024: Tentacle_05_jnt
+    400026: Tentacle_05_jnt 1
+    400028: Tentacle_05_jnt_grp
+    400030: Tentacle_06_jnt
+    400032: Tentacle_06_jnt 1
+    400034: Tentacle_06_jnt_grp
+    400036: Tentacle_07_jnt
+    400038: Tentacle_07_jnt 1
+    400040: Tentacle_07_jnt_grp
+    400042: Tentacle_08_jnt
+    400044: Tentacle_08_jnt 1
+    400046: Tentacle_08_jnt_grp
+    400048: Tentacle_09_jnt
+    400050: Tentacle_geo
+    400052: //RootNode
+    4300000: Tentacle_geo
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Tentacle_geo
   materials:
     importMaterials: 1
     materialName: 0
@@ -39,7 +90,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.15
+    globalScale: 12
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -81,7 +132,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

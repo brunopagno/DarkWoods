@@ -49,6 +49,11 @@ public class LightComponent : MonoBehaviour
 
     public bool ClearVisionToCreature(GameObject creature)
     {
+        if (_flashLight.CurrentBattery == 0)
+        {
+            return false;
+        }
+
         if (Vector2.Angle(transform.forward, creature.transform.position - transform.position) < _light.spotAngle / 2)
         {
             RaycastHit2D hit = Physics2D.Linecast(transform.position, creature.transform.position);
@@ -60,12 +65,12 @@ public class LightComponent : MonoBehaviour
         return false;
     }
 
-    private void OnDrawGizmos()
-    {
-        if (_light != null)
-        {
-            Gizmos.color = new Color(0.1f, 0.1f, 0.1f, 0.5f);
-            Gizmos.DrawSphere(transform.position, _light.range);
-        }
-    }
+    // private void OnDrawGizmos()
+    // {
+    //     if (_light != null)
+    //     {
+    //         Gizmos.color = new Color(0.1f, 0.1f, 0.1f, 0.5f);
+    //         Gizmos.DrawSphere(transform.position, _light.range);
+    //     }
+    // }
 }

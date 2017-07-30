@@ -8,6 +8,7 @@ public class TentacleComponent : BaseGameEntity
 {
     private IMessageService _messageService;
     public GameObject Exclamation;
+    public GameObject Slurp;
 
     public float Range = 0.5f;
     public float DrawSpeed = 2f;
@@ -16,6 +17,7 @@ public class TentacleComponent : BaseGameEntity
     private GameObject _theKilled;
     private Vector3 _direction;
     private GameObject _heroReference;
+    private Animator _animator;
 
     private void Awake()
     {
@@ -23,6 +25,7 @@ public class TentacleComponent : BaseGameEntity
         _messageService = ServiceHolder.Instance.Get<IMessageService>();
 
         _heroReference = GameObject.FindGameObjectWithTag("Player");
+        _animator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -31,7 +34,6 @@ public class TentacleComponent : BaseGameEntity
         {
             _theKilled.gameObject.GetComponent<Collider2D>().enabled = false;
             _theKilled.transform.position -= _direction * Time.deltaTime * DrawSpeed * 0.5f;
-            transform.position -= Vector3.back * Time.deltaTime * DrawSpeed;
             _theKilled.transform.position -= Vector3.back * Time.deltaTime * DrawSpeed;
 
             if (_theKilled.transform.position.z > 3)
@@ -55,13 +57,14 @@ public class TentacleComponent : BaseGameEntity
                 {
                     collided.GetComponent<BaseGameEntity>().BeCaughtByTentacle();
                     Exclamation.SetActive(true);
+                    Slurp.SetActive(true);
                     _killingSomeone = true;
                     _theKilled = collided;
                     _direction = (_theKilled.transform.position - transform.position).normalized;
+                    _animator.SetTrigger("lick");
                 }
             }
         }
-
     }
 
     public override void BeCaughtByTentacle() { }

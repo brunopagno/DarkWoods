@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 92544721115243536}
   - component: {fileID: 124339219323188912}
   - component: {fileID: 81999325162169584}
+  - component: {fileID: 114528673725689334}
   m_Layer: 0
   m_Name: HeroCamera
   m_TagString: MainCamera
@@ -93,6 +94,18 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1111979708384990}
   m_Enabled: 1
+--- !u!114 &114528673725689334
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111979708384990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f6ceb2c662a2d240a1e86835c2120bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Reference: {fileID: 0}
 --- !u!124 &124339219323188912
 Behaviour:
   m_ObjectHideFlags: 1

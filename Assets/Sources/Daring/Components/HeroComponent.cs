@@ -9,7 +9,7 @@ public class HeroComponent : BaseGameEntity
     public enum HeroState
     {
         Normal,
-        Scaried
+        Scared
     }
 
     public float Speed = 1.5f;
@@ -18,11 +18,14 @@ public class HeroComponent : BaseGameEntity
     public float ScariedSpeed = 1f;
     public float ScariedTime = 2f;
     public float AuraDistanceForNoticeability = 1.4f;
+    public GameObject ScaredText;
 
     private Vector3 _nextDestination;
     private Vector3 _destination;
     private Vector3 _direction;
     private Quaternion _look;
+
+    private Animator _animator;
 
     private HeroState _state;
     private float _currentSpeed;
@@ -40,6 +43,7 @@ public class HeroComponent : BaseGameEntity
         _messageService.AddHandler<EndGameMessage>(obj => _stop = true);
         _currentSpeed = Speed;
         _state = HeroState.Normal;
+        _animator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -56,13 +60,13 @@ public class HeroComponent : BaseGameEntity
 
     private void GetInput()
     {
-        if (_state == HeroState.Normal && Input.GetMouseButtonDown(0))
+        if (_state == HeroState.Normal && Input.GetMouseButton(0))
         {
             Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10);
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
             UpdateDestination(worldPosition);
         }
-        else if (_state == HeroState.Scaried && Input.GetMouseButtonDown(0))
+        else if (_state == HeroState.Scared && Input.GetMouseButton(0))
         {
             Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10);
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
@@ -92,6 +96,11 @@ public class HeroComponent : BaseGameEntity
             Vector3.Distance(transform.position, _destination) > StopAtDistanceToDestination)
         {
             transform.position += _direction * _currentSpeed * Time.deltaTime;
+            _animator.SetBool("walking", true);
+        }
+        else
+        {
+            _animator.SetBool("walking", false);
         }
 
         if (_direction != Vector3.zero)
@@ -99,7 +108,7 @@ public class HeroComponent : BaseGameEntity
             transform.rotation = Quaternion.Slerp(transform.rotation, _look, Time.deltaTime * RotationSpeed);
         }
         
-        if (_state == HeroState.Scaried)
+        if (_state == HeroState.Scared)
         {
             _scariedTimer += Time.deltaTime;
             if (_scariedTimer > ScariedTime)
@@ -123,7 +132,8 @@ public class HeroComponent : BaseGameEntity
                 switch(bge.EntityType)
                 {
                     case EntityType.BatBat:
-                        SetState(HeroState.Scaried, collided.transform.position);
+                        (bge as BatBatComponent).Laugh();
+                        SetState(HeroState.Scared, collided.transform.position);
                         break;
                     case EntityType.Insecto:
                         (bge as InsectoComponent).BlowUp();
@@ -141,11 +151,13 @@ public class HeroComponent : BaseGameEntity
             case HeroState.Normal:
                 _currentSpeed = Speed;
                 UpdateDestination(_nextDestination);
+                ScaredText.SetActive(false);
                 break;
-            case HeroState.Scaried:
+            case HeroState.Scared:
                 _currentSpeed = ScariedSpeed;
                 Vector3 diference = transform.position - somePosition;
                 UpdateDestination(transform.position + diference * 5);
+                ScaredText.SetActive(true);
                 break;
         }
     }
@@ -155,9 +167,9 @@ public class HeroComponent : BaseGameEntity
         _stop = true;
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = new Color(0, 0.8f, 1f, 0.5f);
-        Gizmos.DrawSphere(transform.position, AuraDistanceForNoticeability);
-    }
+    // private void OnDrawGizmos()
+    // {
+    //     Gizmos.color = new Color(0, 0.8f, 1f, 0.5f);
+    //     Gizmos.DrawSphere(transform.position, AuraDistanceForNoticeability);
+    // }
 }
