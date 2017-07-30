@@ -12,6 +12,10 @@ public class HeroComponent : BaseGameEntity
         Scared
     }
 
+    public GameObject WaitBeforeStart;
+    public float WaitTimer;
+    private bool _hasInitialized;
+
     public float Speed = 1.5f;
     public float StopAtDistanceToDestination = 0.1f;
     public float RotationSpeed = 20;
@@ -25,7 +29,7 @@ public class HeroComponent : BaseGameEntity
     private Vector3 _direction;
     private Quaternion _look;
 
-    private Animator _animator;
+    public Animator TheOneAnimator;
 
     private HeroState _state;
     private float _currentSpeed;
@@ -43,11 +47,23 @@ public class HeroComponent : BaseGameEntity
         _messageService.AddHandler<EndGameMessage>(obj => _stop = true);
         _currentSpeed = Speed;
         _state = HeroState.Normal;
-        _animator = GetComponentInChildren<Animator>();
+        TheOneAnimator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
     {
+        if (!_hasInitialized)
+        {
+            WaitTimer -= Time.deltaTime;
+            if (WaitTimer > 0)
+            {
+                return;
+            }
+
+            _hasInitialized = true;
+            WaitBeforeStart.SetActive(false);
+        }
+
         if (_stop)
         {
             return;
@@ -96,11 +112,11 @@ public class HeroComponent : BaseGameEntity
             Vector3.Distance(transform.position, _destination) > StopAtDistanceToDestination)
         {
             transform.position += _direction * _currentSpeed * Time.deltaTime;
-            _animator.SetBool("walking", true);
+            TheOneAnimator.SetBool("walking", true);
         }
         else
         {
-            _animator.SetBool("walking", false);
+            TheOneAnimator.SetBool("walking", false);
         }
 
         if (_direction != Vector3.zero)
