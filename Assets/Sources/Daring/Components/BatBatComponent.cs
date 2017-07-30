@@ -18,6 +18,7 @@ public class BatBatComponent : MonoBehaviour
     private readonly float _stopAtDistanceToDestination = 0.1f;
 
     private GameObject _heroReference;
+    private LightComponent _flashLightReference;
 
     private void Awake()
     {
@@ -25,6 +26,7 @@ public class BatBatComponent : MonoBehaviour
         _messageService.AddHandler<HeroCollisionMessage>(OnHeroCollisionMessage);
 
         _heroReference = GameObject.FindGameObjectWithTag("Player");
+        _flashLightReference = GameObject.FindGameObjectWithTag("FlashLight").GetComponent<LightComponent>();
     }
 
     private void OnHeroCollisionMessage(HeroCollisionMessage obj)
@@ -40,8 +42,16 @@ public class BatBatComponent : MonoBehaviour
         if (CanSeeHero())
         {
             Exclamation.SetActive(true);
+
             Vector3 otherDirection = _heroReference.transform.position - transform.position;
-            transform.position += otherDirection.normalized * Speed * Time.deltaTime;
+            if (_flashLightReference.ClearVisionToCreature(gameObject))
+            {
+                transform.position -= otherDirection.normalized * Speed * Time.deltaTime;
+            }
+            else
+            {
+                transform.position += otherDirection.normalized * Speed * Time.deltaTime;
+            }
             _moveOn = true;
         }
         else 
