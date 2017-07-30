@@ -12,7 +12,9 @@ public class TentacleComponent : BaseGameEntity
 
     public float Range = 0.5f;
     public float DrawSpeed = 2f;
-    
+
+    public AudioSource SlurpSound;
+
     private bool _killingSomeone;
     private GameObject _theKilled;
     private Vector3 _direction;
@@ -62,6 +64,7 @@ public class TentacleComponent : BaseGameEntity
                     _theKilled = collided;
                     _direction = (_theKilled.transform.position - transform.position).normalized;
                     _animator.SetTrigger("lick");
+                    SlurpSound.Play();
                 }
             }
         }

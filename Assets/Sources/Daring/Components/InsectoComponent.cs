@@ -18,6 +18,8 @@ public class InsectoComponent : BaseGameEntity
     
     private bool _stop;
 
+    public AudioSource Blow;
+
     private void Awake()
     {
         EntityType = EntityType.Insecto;
@@ -81,6 +83,7 @@ public class InsectoComponent : BaseGameEntity
     {
         _stop = true;
         _animator.SetTrigger("blow");
+        Blow.Play();
         GetComponent<Collider2D>().enabled = false;
     }
 }

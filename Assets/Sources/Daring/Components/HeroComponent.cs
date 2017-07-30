@@ -23,6 +23,8 @@ public class HeroComponent : BaseGameEntity
     public float ScariedTime = 2f;
     public float AuraDistanceForNoticeability = 1.4f;
     public GameObject ScaredText;
+    
+    public AudioSource DeathSound;
 
     private Vector3 _nextDestination;
     private Vector3 _destination;
@@ -46,7 +48,7 @@ public class HeroComponent : BaseGameEntity
         EntityType = EntityType.Hero;
         _flashLight = ServiceHolder.Instance.Get<HeroService>().Hero.FlashLight;
         _messageService = ServiceHolder.Instance.Get<IMessageService>();
-        _messageService.AddHandler<EndGameMessage>(obj => _stop = true);
+        _messageService.AddHandler<EndGameMessage>(obj => _stop = true );
         _currentSpeed = Speed;
         _state = HeroState.Normal;
     }
@@ -182,6 +184,7 @@ public class HeroComponent : BaseGameEntity
 
     public override void BeCaughtByTentacle()
     {
+        DeathSound.Play();
         _stop = true;
     }
 

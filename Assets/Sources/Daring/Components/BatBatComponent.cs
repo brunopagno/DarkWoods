@@ -26,6 +26,8 @@ public class BatBatComponent : BaseGameEntity
     private float _waitTimer;
     private bool _waitLaughing;
 
+    public AudioSource Chirp;
+
     private void Awake()
     {
         EntityType = EntityType.BatBat;
@@ -64,6 +66,10 @@ public class BatBatComponent : BaseGameEntity
         if (CanSeeHero())
         {
             Exclamation.SetActive(true);
+            if (!_moveOn)
+            {
+                Chirp.Play();
+            }
 
             Vector3 otherDirection = _heroReference.transform.position - transform.position;
             if (_flashLightReference.ClearVisionToCreature(gameObject))

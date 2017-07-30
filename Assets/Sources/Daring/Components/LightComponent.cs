@@ -12,6 +12,9 @@ public class LightComponent : MonoBehaviour
     private HeroService _heroService;
     private FlashLight _flashLight;
 
+    public AudioSource OuttaBattery;
+    private bool _playDeadBattery;
+
     public void Awake()
     {
         _heroService = ServiceHolder.Instance.Get<HeroService>();
@@ -35,6 +38,11 @@ public class LightComponent : MonoBehaviour
 
             if (_flashLight.CurrentBattery < 0)
             {
+                if (!_playDeadBattery)
+                {
+                    _playDeadBattery = true;
+                    OuttaBattery.Play();
+                }
                 _flashLight.CurrentBattery = 0;
                 _light.intensity = 0;
             }
