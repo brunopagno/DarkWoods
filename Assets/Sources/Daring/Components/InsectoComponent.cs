@@ -9,6 +9,7 @@ public class InsectoComponent : BaseGameEntity
     private IMessageService _messageService;
     private GameObject _heroReference;
     private LightComponent _flashLightReference;
+    private Animator _animator;
 
     public float Speed = 0.8f;
     public float RotationSpeed = 20f;
@@ -24,6 +25,7 @@ public class InsectoComponent : BaseGameEntity
 
         _heroReference = GameObject.FindGameObjectWithTag("Player");
         _flashLightReference = GameObject.FindGameObjectWithTag("FlashLight").GetComponent<LightComponent>();
+        _animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -75,5 +77,6 @@ public class InsectoComponent : BaseGameEntity
     public void BlowUp()
     {
         _stop = true;
+        _animator.SetTrigger("blow");
     }
 }

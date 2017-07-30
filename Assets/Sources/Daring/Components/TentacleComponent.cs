@@ -15,11 +15,14 @@ public class TentacleComponent : BaseGameEntity
     private bool _killingSomeone;
     private GameObject _theKilled;
     private Vector3 _direction;
+    private GameObject _heroReference;
 
     private void Awake()
     {
         EntityType = EntityType.Tentacle;
         _messageService = ServiceHolder.Instance.Get<IMessageService>();
+
+        _heroReference = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Update()
@@ -33,7 +36,11 @@ public class TentacleComponent : BaseGameEntity
 
             if (_theKilled.transform.position.z > 3)
             {
-                _messageService.SendMessage(new EndGameMessage(false));
+                if (_theKilled == _heroReference)
+                {
+                    _messageService.SendMessage(new EndGameMessage(false));
+                }
+                gameObject.SetActive(false);
             }
         }
         else
