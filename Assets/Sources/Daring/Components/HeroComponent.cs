@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using Lunaria;
 using UnityEngine;
 
-public class HeroComponent : MonoBehaviour {
+public class HeroComponent : BaseGameEntity
+{
 
     public enum HeroState
     {
@@ -29,17 +30,25 @@ public class HeroComponent : MonoBehaviour {
     private float _scariedTimer;
 
     private IMessageService _messageService;
+    
+    private bool _stop;
 
     private void Awake()
     {
         _messageService = ServiceHolder.Instance.Get<IMessageService>();
         _messageService.AddHandler<ScareHeroMessage>(OnScareHeromessage);
+        _messageService.AddHandler<EndGameMessage>(obj => _stop = true);
         _currentSpeed = Speed;
         _state = HeroState.Normal;
     }
 
     private void Update()
     {
+        if (_stop)
+        {
+            return;
+        }
+
         GetInput();
         MoveHero();
     }
@@ -125,6 +134,11 @@ public class HeroComponent : MonoBehaviour {
                 UpdateDestination(transform.position + diference * 5);
                 break;
         }
+    }
+
+    public override void BeCaughtByTentacle()
+    {
+        _stop = true;
     }
 }
 

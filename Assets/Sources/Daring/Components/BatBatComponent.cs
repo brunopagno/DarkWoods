@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Lunaria;
 using UnityEngine;
 
-public class BatBatComponent : MonoBehaviour
+public class BatBatComponent : BaseGameEntity
 {
     private IMessageService _messageService;
 
@@ -19,11 +19,14 @@ public class BatBatComponent : MonoBehaviour
 
     private GameObject _heroReference;
     private LightComponent _flashLightReference;
+    
+    private bool _stop;
 
     private void Awake()
     {
         _messageService = ServiceHolder.Instance.Get<IMessageService>();
         _messageService.AddHandler<HeroCollisionMessage>(OnHeroCollisionMessage);
+        _messageService.AddHandler<EndGameMessage>(obj => _stop = true);
 
         _heroReference = GameObject.FindGameObjectWithTag("Player");
         _flashLightReference = GameObject.FindGameObjectWithTag("FlashLight").GetComponent<LightComponent>();
@@ -39,6 +42,11 @@ public class BatBatComponent : MonoBehaviour
 
     private void Update()
     {
+        if (_stop)
+        {
+            return;
+        }
+
         if (CanSeeHero())
         {
             Exclamation.SetActive(true);
@@ -77,7 +85,12 @@ public class BatBatComponent : MonoBehaviour
     private bool CanSeeHero()
     {
         RaycastHit2D hit = Physics2D.Linecast(transform.position, _heroReference.transform.position);
-        return hit.collider.gameObject == _heroReference;
+        return hit.collider != null && hit.collider.gameObject == _heroReference;
+    }
+
+    public override void BeCaughtByTentacle()
+    {
+        _stop = true;
     }
 
     private void OnDrawGizmos()
