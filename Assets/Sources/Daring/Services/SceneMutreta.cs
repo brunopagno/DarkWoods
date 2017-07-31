@@ -9,8 +9,9 @@ public class SceneMutreta
 {
     private int _currentScene = 0;
     private string[] _scenes = {
-        "scene_demo",
-        "scene_first"
+        "scene_first",
+        "scene_second",
+        "scene_third"
     };
 
     public void StartGame()
