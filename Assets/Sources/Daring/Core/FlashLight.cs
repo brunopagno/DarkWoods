@@ -5,7 +5,7 @@ public class FlashLight
 {
     public float CurrentBattery;
 
-    public float BatteryMaxPower = 5f;
+    public float BatteryMaxPower = 60f;
     public float BatteryDrainTick = 0.5f;
     public float BatteryDrainTickSpeed = 0.5f;
 
