@@ -43,6 +43,8 @@ public class HeroComponent : BaseGameEntity
     
     private bool _stop;
 
+    private bool _playItOnce;
+
     private void Awake()
     {
         EntityType = EntityType.Hero;
@@ -50,7 +52,11 @@ public class HeroComponent : BaseGameEntity
         _messageService = ServiceHolder.Instance.Get<IMessageService>();
         _messageService.AddHandler<EndGameMessage>(obj => 
         {
-            DeathSound.Play();
+            if (!_playItOnce)
+            {
+                DeathSound.Play();
+                _playItOnce = true;
+            }
             _stop = true;
         });
         _currentSpeed = Speed;

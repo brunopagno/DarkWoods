@@ -12,8 +12,8 @@ public class LightComponent : MonoBehaviour
     private HeroService _heroService;
     private FlashLight _flashLight;
 
-    // public AudioSource OuttaBattery;
-    // private bool _playDeadBattery;
+    public AudioSource OuttaBattery;
+    private bool _playDeadBattery;
     public AudioSource NearEndSound;
     private bool _nearEndSound;
     private bool _stop;
@@ -46,12 +46,12 @@ public class LightComponent : MonoBehaviour
 
             if (_flashLight.CurrentBattery < 0)
             {
-                // if (!_playDeadBattery)
-                // {
-                //     ServiceHolder.Instance.Get<IMessageService>().SendMessage(new OuttaBatteryMessage());
-                //     _playDeadBattery = true;
-                //     OuttaBattery.Play();
-                // }
+                if (!_playDeadBattery)
+                {
+                    ServiceHolder.Instance.Get<IMessageService>().SendMessage(new OuttaBatteryMessage());
+                    _playDeadBattery = true;
+                    OuttaBattery.Play();
+                }
                 _flashLight.CurrentBattery = 0;
                 _light.intensity = 0;
             }
