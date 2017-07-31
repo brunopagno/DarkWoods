@@ -16,10 +16,14 @@ public class LightComponent : MonoBehaviour
     // private bool _playDeadBattery;
     public AudioSource NearEndSound;
     private bool _nearEndSound;
+    private bool _stop;
 
     public void Awake()
     {
         _heroService = ServiceHolder.Instance.Get<HeroService>();
+
+        ServiceHolder.Instance.Get<IMessageService>().AddHandler<EndGameMessage>(obj => _stop = true);
+
         _flashLight = _heroService.Hero.FlashLight;
         _flashLight.CurrentBattery = _flashLight.BatteryMaxPower;
         _light = GetComponent<Light>();
@@ -27,6 +31,8 @@ public class LightComponent : MonoBehaviour
 
     private void Update()
     {
+        if (_stop) return;
+
         DrainBattery();
     }
 
