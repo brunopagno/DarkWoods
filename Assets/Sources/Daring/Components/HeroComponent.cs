@@ -48,7 +48,11 @@ public class HeroComponent : BaseGameEntity
         EntityType = EntityType.Hero;
         _flashLight = ServiceHolder.Instance.Get<HeroService>().Hero.FlashLight;
         _messageService = ServiceHolder.Instance.Get<IMessageService>();
-        _messageService.AddHandler<EndGameMessage>(obj => _stop = true );
+        _messageService.AddHandler<EndGameMessage>(obj => 
+        {
+            DeathSound.Play();
+            _stop = true;
+        });
         _currentSpeed = Speed;
         _state = HeroState.Normal;
     }

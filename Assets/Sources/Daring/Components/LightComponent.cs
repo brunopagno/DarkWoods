@@ -12,8 +12,10 @@ public class LightComponent : MonoBehaviour
     private HeroService _heroService;
     private FlashLight _flashLight;
 
-    public AudioSource OuttaBattery;
-    private bool _playDeadBattery;
+    // public AudioSource OuttaBattery;
+    // private bool _playDeadBattery;
+    public AudioSource NearEndSound;
+    private bool _nearEndSound;
 
     public void Awake()
     {
@@ -38,11 +40,12 @@ public class LightComponent : MonoBehaviour
 
             if (_flashLight.CurrentBattery < 0)
             {
-                if (!_playDeadBattery)
-                {
-                    _playDeadBattery = true;
-                    OuttaBattery.Play();
-                }
+                // if (!_playDeadBattery)
+                // {
+                //     ServiceHolder.Instance.Get<IMessageService>().SendMessage(new OuttaBatteryMessage());
+                //     _playDeadBattery = true;
+                //     OuttaBattery.Play();
+                // }
                 _flashLight.CurrentBattery = 0;
                 _light.intensity = 0;
             }
@@ -51,6 +54,11 @@ public class LightComponent : MonoBehaviour
                 float relativeLoad = _flashLight.CurrentBattery / _flashLight.BatteryMaxPower;
                 float lightIntensity = _flashLight.RelativeLightIntensity(relativeLoad);
                 _light.intensity = lightIntensity;
+                if (relativeLoad < 0.1f && !_nearEndSound)
+                {
+                    _nearEndSound = true;
+                    NearEndSound.Play();
+                }
             }
         }
     }
@@ -82,3 +90,5 @@ public class LightComponent : MonoBehaviour
     //     }
     // }
 }
+
+public class OuttaBatteryMessage { }

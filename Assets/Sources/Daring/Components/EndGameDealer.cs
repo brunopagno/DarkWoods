@@ -19,7 +19,13 @@ public class EndGameDealer : MonoBehaviour
         _messageService = ServiceHolder.Instance.Get<IMessageService>();
         _sceneMutreta = ServiceHolder.Instance.Get<SceneMutreta>();
         _messageService.AddHandler<EndGameMessage>(OnEndGameMessage);
+        _messageService.AddHandler<OuttaBatteryMessage>(OnOuttaBatteryMessage);
         _animator = GetComponent<Animator>();
+    }
+
+    private void OnOuttaBatteryMessage(OuttaBatteryMessage obj)
+    {
+        _messageService.SendMessage(new EndGameMessage(false));
     }
 
     private void OnEndGameMessage(EndGameMessage mess)
