@@ -1,0 +1,209 @@
+fileFormatVersion: 2
+guid: 893e165384abf434eae049bef3c2959a
+timeCreated: 1501499019
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Leaf_geo
+    100002: Leaf_geo1
+    100004: Leaf_geo2
+    100006: Leaf_geo3
+    100008: Leaf_geo4
+    100010: Leaf_geo5
+    100012: Leaf_geo6
+    100014: Leaf_geo7
+    100016: Leaf_geo8
+    100018: Leaf_geo9
+    100020: Leaf_Tongue_geo
+    100022: Leaf_Tongue_geo1
+    100024: Leaf_Tongue_geo2
+    100026: LeafRound_geo
+    100028: LeafRound_geo1
+    100030: LeafRound_geo2
+    100032: LeafRound_geo3
+    100034: LeafRound_geo4
+    100036: LeafRound_geo5
+    100038: LeafRound_geo6
+    100040: LeafRound_geo7
+    100042: LeafRound_geo8
+    100044: //RootNode
+    100046: Stone_geo
+    100048: Stone_geo1
+    100050: TreeTrunk_geo
+    400000: Leaf_geo
+    400002: Leaf_geo1
+    400004: Leaf_geo2
+    400006: Leaf_geo3
+    400008: Leaf_geo4
+    400010: Leaf_geo5
+    400012: Leaf_geo6
+    400014: Leaf_geo7
+    400016: Leaf_geo8
+    400018: Leaf_geo9
+    400020: Leaf_Tongue_geo
+    400022: Leaf_Tongue_geo1
+    400024: Leaf_Tongue_geo2
+    400026: LeafRound_geo
+    400028: LeafRound_geo1
+    400030: LeafRound_geo2
+    400032: LeafRound_geo3
+    400034: LeafRound_geo4
+    400036: LeafRound_geo5
+    400038: LeafRound_geo6
+    400040: LeafRound_geo7
+    400042: LeafRound_geo8
+    400044: //RootNode
+    400046: Stone_geo
+    400048: Stone_geo1
+    400050: TreeTrunk_geo
+    2300000: Leaf_geo
+    2300002: Leaf_geo1
+    2300004: Leaf_geo2
+    2300006: Leaf_geo3
+    2300008: Leaf_geo4
+    2300010: Leaf_geo5
+    2300012: Leaf_geo6
+    2300014: Leaf_geo7
+    2300016: Leaf_geo8
+    2300018: Leaf_geo9
+    2300020: Leaf_Tongue_geo
+    2300022: Leaf_Tongue_geo1
+    2300024: Leaf_Tongue_geo2
+    2300026: LeafRound_geo
+    2300028: LeafRound_geo1
+    2300030: LeafRound_geo2
+    2300032: LeafRound_geo3
+    2300034: LeafRound_geo4
+    2300036: LeafRound_geo5
+    2300038: LeafRound_geo6
+    2300040: LeafRound_geo7
+    2300042: LeafRound_geo8
+    2300044: Stone_geo
+    2300046: Stone_geo1
+    2300048: TreeTrunk_geo
+    3300000: Leaf_geo
+    3300002: Leaf_geo1
+    3300004: Leaf_geo2
+    3300006: Leaf_geo3
+    3300008: Leaf_geo4
+    3300010: Leaf_geo5
+    3300012: Leaf_geo6
+    3300014: Leaf_geo7
+    3300016: Leaf_geo8
+    3300018: Leaf_geo9
+    3300020: Leaf_Tongue_geo
+    3300022: Leaf_Tongue_geo1
+    3300024: Leaf_Tongue_geo2
+    3300026: LeafRound_geo
+    3300028: LeafRound_geo1
+    3300030: LeafRound_geo2
+    3300032: LeafRound_geo3
+    3300034: LeafRound_geo4
+    3300036: LeafRound_geo5
+    3300038: LeafRound_geo6
+    3300040: LeafRound_geo7
+    3300042: LeafRound_geo8
+    3300044: Stone_geo
+    3300046: Stone_geo1
+    3300048: TreeTrunk_geo
+    4300000: Leaf_geo
+    4300002: Leaf_Tongue_geo
+    4300004: TreeTrunk_geo
+    4300006: LeafRound_geo
+    4300008: Stone_geo
+    4300010: LeafRound_geo1
+    4300012: Leaf_geo1
+    4300014: Leaf_geo2
+    4300016: Leaf_geo3
+    4300018: Stone_geo1
+    4300020: Leaf_Tongue_geo1
+    4300022: Leaf_Tongue_geo2
+    4300024: LeafRound_geo2
+    4300026: LeafRound_geo3
+    4300028: LeafRound_geo4
+    4300030: LeafRound_geo5
+    4300032: LeafRound_geo6
+    4300034: Leaf_geo6
+    4300036: Leaf_geo5
+    4300038: Leaf_geo4
+    4300040: Leaf_geo9
+    4300042: Leaf_geo8
+    4300044: Leaf_geo7
+    4300046: LeafRound_geo7
+    4300048: LeafRound_geo8
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 5
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
